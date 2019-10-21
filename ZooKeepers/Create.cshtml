@@ -1,0 +1,44 @@
+﻿@page
+@model WebApplication1.Pages.ZooKeepers.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>zkeeper</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="zkeeper.ZKfname" class="control-label"></label>
+                <input asp-for="zkeeper.ZKfname" class="form-control" />
+                <span asp-validation-for="zkeeper.ZKfname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="zkeeper.ZKlname" class="control-label"></label>
+                <input asp-for="zkeeper.ZKlname" class="form-control" />
+                <span asp-validation-for="zkeeper.ZKlname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="zkeeper.ZKteam" class="control-label"></label>
+                <input asp-for="zkeeper.ZKteam" class="form-control" />
+                <span asp-validation-for="zkeeper.ZKteam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

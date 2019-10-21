@@ -1,0 +1,40 @@
+﻿@page
+@model WebApplication1.Pages.animal.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>animals</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.animals.Agenus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.animals.Agenus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.animals.Aspecies)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.animals.Aspecies)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.animals.Alocation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.animals.Alocation)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="animals.Aid" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
